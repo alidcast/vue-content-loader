@@ -1,34 +1,14 @@
-# vue-markdown-loader
+# vue-content-loader
 
-[![npm](https://img.shields.io/npm/v/vue-markdown-loader.svg?style=flat-square)](https://www.npmjs.com/package/vue-markdown-loader)
-![vue](https://img.shields.io/badge/vue-2.x-4fc08d.svg?colorA=2c3e50&style=flat-square)
-
-> Convert Markdown file to Vue Component using markdown-it.
-
-
-## Example
-- https://github.com/mint-ui/docs
-- https://github.com/elemefe/element
-
-## Live demo
-
-https://glitch.com/edit/#!/vue-markdown
+Extends `vue-markdown-loader` to accept metadata.
 
 ## Installation
 
 ```bash
-# For Vue1
-npm i vue-markdown-loader@0 -D
 
-# For Vue2
-npm i vue-markdown-loader -D
+npm install vue-content-loader --save-dev
+
 ```
-
-## Feature
-- Hot reload
-- Write vue script
-- Code highlight
-
 
 ## Usage
 [Documentation: Using loaders](https://webpack.js.org/concepts/loaders/)
