@@ -12,7 +12,12 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          metadata () {
+            console.log('made it here!')
+          }
+        }
       },
       {
         test: /\.js$/,
@@ -28,7 +33,12 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: resolve(__dirname, '../index.js')
+        loader: resolve(__dirname, '../index.js'),
+        options: {
+          metadata () {
+            console.log('made it here!')
+          }
+        }
       }
     ]
   },

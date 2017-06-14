@@ -4,7 +4,7 @@
   "description": "markdown file to vue component loader.",
   "main": "index.js",
   "scripts": {
-    "dev": "cd example && webpack-dev-server --inline --hot --port 8888 --open"
+    "dev": "cd example && webpack-dev-server --inline --hot --port 8888"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/QingWei-Li/vue-markdown-loader#readme",
   "dependencies": {
     "cheerio": "^0.20.0",
+    "front-matter": "^2.1.2",
     "highlight.js": "^9.4.0",
     "loader-utils": "^0.2.15",
     "markdown-it": "^6.0.5"
