@@ -1,5 +1,6 @@
 var resolve = require('path').resolve
 var webpack = require('webpack')
+var projectRoot = resolve(__dirname, './')
 
 module.exports = {
   entry: './src/entry.js',
@@ -8,16 +9,19 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  resolve: {
+    extensions: [
+      '.js', '.vue'
+    ],
+    alias: {
+      "~example": resolve(projectRoot, 'src/')
+    }
+  },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          metadata () {
-            console.log('made it here!')
-          }
-        }
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
@@ -33,12 +37,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: resolve(__dirname, '../index.js'),
-        options: {
-          metadata () {
-            console.log('made it here!')
-          }
-        }
+        loader: resolve(__dirname, '../index.js')
       }
     ]
   },
