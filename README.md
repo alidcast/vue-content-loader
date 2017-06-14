@@ -36,8 +36,9 @@ export default {
 </script>
 ```
 
-First, the metadata is extracted, the front matter is converted into an HTML comment,
-and the markdown file is converted into a single Vue component file.
+First, the metadata is extracted and the front matter is commented out.
+
+Then, the markdown file is converted into a single Vue component file.
 
 ```
 // ~content/FirstPost.md
@@ -61,7 +62,7 @@ export default {
 </script>
 ```
 
-Then, extracted metadata is appended to the component's `data` property!
+Finally, the extracted metadata is appended to the component's `data` property!
 
 
 ```
