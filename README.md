@@ -10,79 +10,63 @@ npm install vue-content-loader --save-dev
 
 ```
 
-## Usage
-[Documentation: Using loaders](https://webpack.js.org/concepts/loaders/)
+## How it works
 
-`webpack.config.js` file:
+You can use front-matter and Vue components in your markdown files:
 
-```javascript
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.md$/,
-        loader: 'vue-markdown-loader'
-      }
-    ]
-  }
-};
-```
+```md
+---
+title: "My first post!"
+---
 
-## Options
+# Hello
 
-reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
-```javascript
-{
-  module: {
-    rules: [
-      {
-        test: /\.md$/,
-        loader: 'vue-markdown-loader'
-        options: {
-          // markdown-it config
-          preset: 'default',
-          breaks: true,
-          preprocess: function(markdownIt, source) {
-            // do any thing
-            return source
-          },
-          use: [
-            /* markdown-it plugin */
-            require('markdown-it-xxx'),
-            /* or */
-            [require('markdown-it-xxx'), 'this is options']
-          ]
-        }
-      }
-    ]
+This is my newest project:
+
+<SomeDemo />
+
+<script>
+import SomeDemo from '~components/demo'
+
+export default {
+  component: {
+    SomeDemo
   }
 }
+</script>
 ```
 
-Or you can customize markdown-it
-```javascript
-var markdown = require('markdown-it')({
-  html: true,
-  breaks: true
-})
+First, the metadata is extracted, the front matter is converted into an HTML comment,
+and the markdown file is converted into a single Vue component file.
 
-markdown
-  .use(plugin1)
-  .use(plugin2, opts, ...)
-  .use(plugin3);
+```
+// ~content/FirstPost.md
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.md$/,
-        loader: 'vue-markdown-loader',
-        options: markdown
-      }
-    ]
+<template>
+<!--
+title: "My first post!"
+-->
+
+<h1>Hello</h1>
+<SomeDemo></SomeDemo>
+</template>
+
+<script>
+import SomeDemo from '~components/demo'
+export default {
+  component: {
+    SomeDemo
   }
-};
+}
+</script>
 ```
 
-## License
-WTFPL
+Then, extracted metadata is appended to the component's `data` property!
+
+
+```
+import FirstPost from '~content/FirstPost'
+
+console.log(FirstPost.data().title // "My First Post"
+
+```
