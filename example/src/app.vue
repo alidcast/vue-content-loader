@@ -1,26 +1,25 @@
-<metadata>
-</metadata>
-
 <template>
   <div class="markdown-body">
-    <!-- <markdown></markdown> -->
-    <test />
+    Your metadata: {{ metadata }}
+    </br> </br>
+    <MetadataContent />
+    <Markdown />
   </div>
 </template>
 
 <script>
-// import markdown from './markdown.md'
-import test from './content.md'
+import Markdown from './markdown.md'
+import MetadataContent from './content.md'
 import 'highlight.js/styles/github.css'
 import 'github-markdown-css'
 
 export default {
-  created() {
-    console.log(test)
+  data() {
+    return { metadata: MetadataContent.$metadata }
   },
   components: {
-    // markdown,
-    test
+    Markdown,
+    MetadataContent
   }
 }
 </script>
