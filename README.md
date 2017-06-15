@@ -59,11 +59,13 @@ export default {
 </script>
 ```
 
+The content is parsed in three main steps:
+
 First, the metadata is extracted and the front matter is commented out.
 
 Then, the markdown file is converted into a single Vue component file.
 
-Finally, the `$metadata` property is added to the Vue component!
+Finally, the `$metadata` property is added to Vue component.
 
 The result:
 
@@ -74,7 +76,6 @@ The result:
 <!--
 title: "My first post!"
 -->
-
 <h1>Hello</h1>
 <SomeDemo></SomeDemo>
 </template>
