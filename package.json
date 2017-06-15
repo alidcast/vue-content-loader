@@ -1,27 +1,25 @@
 {
-  "name": "vue-markdown-loader",
-  "version": "1.0.0",
-  "description": "markdown file to vue component loader.",
+  "name": "vue-content-loader",
+  "version": "0.1.0",
+  "description": "markdown file with metadata to vue component loader.",
   "main": "index.js",
   "scripts": {
     "dev": "cd example && webpack-dev-server --inline --hot --port 8888"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QingWei-Li/vue-markdown-loader.git"
+    "url": "git+https://github.com/alidcastano/vue-content-loader.git"
   },
   "keywords": [
     "vue",
+    "front-mater",
+    "metadata",
     "markdown",
     "webpack",
     "loader"
   ],
-  "author": "qingwei-li <qingwei.li@gmail.com>",
+  "author": "Alid Castano <Alid Castano>",
   "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/QingWei-Li/vue-markdown-loader/issues"
-  },
-  "homepage": "https://github.com/QingWei-Li/vue-markdown-loader#readme",
   "dependencies": {
     "cheerio": "^0.20.0",
     "front-matter": "^2.1.2",

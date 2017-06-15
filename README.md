@@ -1,6 +1,6 @@
 # vue-content-loader
 
-Extends `vue-markdown-loader` to accept metadata.
+Extends `vue-markdown-loader` to accept front-matter and adds the metadata to Vue component.
 
 ## Installation
 
@@ -9,6 +9,29 @@ Extends `vue-markdown-loader` to accept metadata.
 npm install vue-content-loader --save-dev
 
 ```
+
+## Basic Usage
+
+The following markdown file:
+
+```
+// ~content/MyFirstPost.md
+---
+title: "My First Post"
+---
+
+# Hello World
+
+```
+
+Can be used as such:
+
+```js
+import FirstPost from '~content/FirstPost'
+
+FirstPost.$metadata // { title: "My First Post" }
+```
+
 
 ## How it works
 
@@ -40,6 +63,10 @@ First, the metadata is extracted and the front matter is commented out.
 
 Then, the markdown file is converted into a single Vue component file.
 
+Finally, the `$metadata` property is added to the Vue component!
+
+The result:
+
 ```
 // ~content/FirstPost.md
 
@@ -57,17 +84,17 @@ import SomeDemo from '~components/demo'
 export default {
   component: {
     SomeDemo
-  }
+  },
+  $metadata: { title: "My first post!" }
 }
 </script>
 ```
 
-Finally, the extracted metadata is appended to the component's `data` property!
+## More information
+
+See [vue-markdown-loader](https://github.com/QingWei-Li/vue-markdown-loader) for additional usage.
 
 
-```
-import FirstPost from '~content/FirstPost'
+## Lisence
 
-console.log(FirstPost.data().title // "My First Post"
-
-```
+WTFPL
