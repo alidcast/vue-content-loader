@@ -1,5 +1,6 @@
 <template>
   <div class="markdown-body">
+    The layout: {{ layout }} <br>
     Your metadata: {{ metadata }}
     </br> </br>
     <MetadataContent />
@@ -15,7 +16,10 @@ import 'github-markdown-css'
 
 export default {
   data() {
-    return { metadata: MetadataContent.$metadata }
+    return {
+      layout: MetadataContent.layout,
+      metadata: MetadataContent.$metadata
+    }
   },
   components: {
     Markdown,

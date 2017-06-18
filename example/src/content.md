@@ -1,9 +1,7 @@
 ---
-layout: posts
+layout: "posts"
 title: "Vue Content Component"
 ---
-
-
 
 Some text here.
 
