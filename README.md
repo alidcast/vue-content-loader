@@ -32,6 +32,8 @@ import FirstPost from '~content/FirstPost'
 FirstPost.$metadata // { title: "My First Post" }
 ```
 
+Note: `vue-content-loader` also supports Nuxt.js `layout` property. It treats
+this key in the front-matter differently, inserting it into the component's `layout` property, rather than the `$metadata` property.
 
 ## How it works
 
