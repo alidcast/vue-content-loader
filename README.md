@@ -1,5 +1,8 @@
 # vue-content-loader
 
+
+*Note: This repo works, but was experimental. If you'd like to use front-matter and Vue components in your Vue.js sites, I recommend using [Nuxtent](https://github.com/nuxt-community/nuxtent).*
+
 Extends `vue-markdown-loader` to accept front-matter and adds the metadata to Vue component.
 
 ## Installation
